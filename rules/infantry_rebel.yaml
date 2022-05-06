@@ -1,0 +1,132 @@
+GENERAL:
+	Inherits: ^Building
+    Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Selectable:
+		Bounds: 72,72
+	Building:
+		Footprint: xxX xxx XxX ===
+		Dimensions: 3,4
+		LocalCenterOffset: 0,-512,0
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 1000
+		Prerequisites: ~disabled
+		Description: Produces structures.
+	ProvidesPrerequisite@rebel:
+		Factions: rebel
+		Prerequisite: general.rebel
+	Health:
+		HP: 150000
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		MinRange: 4c0
+		Range: 5c0
+		RevealGeneratedShroud: False
+	RevealsShroud@GAPGEN:
+		Range: 4c0
+	Production:
+		Produces: Building, Defense
+	Valued:
+		Cost: 2000
+	Tooltip:
+		Name: Construction Yard
+	BaseBuilding:
+	Sellable:
+		RequiresCondition: !build-incomplete && !chrono-vortex && !being-captured && !being-demolished
+	GrantConditionOnPrerequisite@GLOBALFACTUNDEPLOY:
+		Condition: factundeploy
+		Prerequisites: global-factundeploy
+	ProductionBar@Building:
+		ProductionType: Building
+	ProductionBar@Defense:
+		ProductionType: Defense
+		Color: 8A8A8A
+	BaseProvider:
+		PauseOnCondition: being-captured
+		Range: 16c0
+	WithBuildingBib:
+	WithBuildingPlacedAnimation:
+		RequiresCondition: !build-incomplete && !chrono-vortex
+	Power:
+		Amount: 0
+	WithDeathAnimation:
+		DeathSequence: dead
+		UseDeathTypeSuffix: false
+	ProvidesPrerequisite@buildingname:
+	HitShape:
+		TargetableOffsets: 1273,939,0, -980,-640,0, -980,640,0
+		Type: Rectangle
+			TopLeft: -1536, -1536
+			BottomRight: 1536, 1536
+    Mobile:
+		Speed: 56
+		AlwaysTurnInPlace: true
+		Locomotor: foot
+    Armament:
+		Weapon: AK47
+    AttackFrontal:
+    RenderSprites:
+	    Image: e1
+
+
+MINER:
+    Inherits: ^Vehicle
+	Inherits@selection: ^SelectableEconomicUnit
+	Buildable:
+		Queue: Infantry
+		BuildPaletteOrder: 110
+		Prerequisites: proc, ~techlevel.infonly
+		Description: Collects Ore and Gems for processing.\n  Unarmed
+	Valued:
+		Cost: 1100
+	Tooltip:
+		Name: Ore Truck
+		GenericName: Harvester
+	Selectable:
+		DecorationBounds: 42,42
+	Harvester:
+		Capacity: 10
+		Resources: Ore,Gems
+		BaleUnloadDelay: 1
+		SearchFromProcRadius: 15
+		SearchFromHarvesterRadius: 8
+		HarvestFacings: 8
+		EmptyCondition: no-ore
+	Health:
+		HP: 60000
+	Armor:
+		Type: Heavy
+	Mobile:
+		Speed: 85
+		Locomotor: foot
+	RevealsShroud:
+		Range: 4c0
+	GpsDot:
+		String: Harvester
+	SpawnActorOnDeath:
+		Actor: HARV.EmptyHusk
+	HarvesterHuskModifier:
+		FullHuskActor: HARV.FullHusk
+		FullnessThreshold: 50
+	ChangesHealth:
+		Step: 100
+		Delay: 25
+		StartIfBelow: 50
+		DamageCooldown: 500
+	Explodes:
+		RequiresCondition: !no-ore
+		Weapon: OreExplosion
+    WithHarvestAnimation:
+	WithDockingAnimation:
+	WithFacingSpriteBody:
+	WithHarvesterPipsDecoration:
+		Position: BottomLeft
+		Margin: 4, 3
+		RequiresSelection: true
+		PipCount: 7
+		ResourceSequences:
+			Ore: pip-yellow
+			Gems: pip-red
+    RenderSprites:
+	    Image: e1
