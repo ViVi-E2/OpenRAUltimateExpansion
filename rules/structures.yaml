@@ -1164,6 +1164,12 @@ FACT:
     ProvidesPrerequisite@mideast:
 		Factions: mideast
 		Prerequisite: structures.mideast
+    ProvidesPrerequisite@siberia:
+		Factions: siberia
+		Prerequisite: structures.siberia
+    ProvidesPrerequisite@canada:
+		Factions: canada
+		Prerequisite: structures.canada
 	Health:
 		HP: 150000
 	Armor:
