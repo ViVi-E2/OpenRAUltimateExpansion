@@ -60,6 +60,11 @@ Rules:
     ra|rules/vehicles_mideast.yaml
     ra|rules/infantry_rebel.yaml
     ra|rules/structures_rebel.yaml
+    #ra|rules/infantry_canada.yaml
+    #ra|rules/aircraft_canada.yaml
+    #ra|rules/vehicles_canada.yaml
+    #ra|rules/infantry_siberia.yaml
+    #ra|rules/vehicles_siberia.yaml
 
 Sequences:
 	ra|sequences/ships.yaml
@@ -71,6 +76,8 @@ Sequences:
 	ra|sequences/decorations.yaml
   	ra|sequences/mideast.yaml
 	#ra|rules/rebel.yaml
+    #ra|rules/canada.yaml
+    #ra|rules/siberia.yaml
 
 TileSets:
 	ra|tilesets/snow.yaml
