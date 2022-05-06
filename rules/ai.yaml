@@ -50,6 +50,21 @@ Player:
 					Attractiveness: -5
 					TargetMetric: None
 					CheckRadius: 8c0
+            paratroopersMid:
+				OrderName: MiddleEasternParatrooperBombers
+				MinimumAttractiveness: 5
+				Consideration@1:
+					Against: Enemy
+					Types: Structure
+					Attractiveness: 1
+					TargetMetric: None
+					CheckRadius: 8c0
+				Consideration@2:
+					Against: Enemy
+					Types: Water
+					Attractiveness: -5
+					TargetMetric: None
+					CheckRadius: 8c0
 			parabombs:
 				OrderName: UkraineParabombs
 				MinimumAttractiveness: 1
@@ -144,6 +159,7 @@ Player:
 			hpad: 4
 			afld: 4
 			afld.ukraine: 4
+            afld.mideast: 4
 			atek: 1
 			stek: 1
 			fix: 1
@@ -159,6 +175,7 @@ Player:
 			syrd: 1
 			afld: 4
 			afld.ukraine: 4
+            afld.mideast: 4
 			pbox: 7
 			gun: 7
 			ftur: 10
@@ -196,6 +213,7 @@ Player:
 			hpad: 4
 			afld: 4
 			afld.ukraine: 4
+            afld.mideast: 4
 			atek: 1
 			stek: 1
 			fix: 1
@@ -208,6 +226,7 @@ Player:
 			hpad: 2
 			afld: 2
 			afld.ukraine: 2
+            afld.mideast: 2
 			spen: 1
 			syrd: 1
 			pbox: 10
@@ -246,6 +265,7 @@ Player:
 			hpad: 8
 			afld: 8
 			afld.ukraine: 8
+            afld.mideast: 8
 			weap: 1
 			atek: 1
 			stek: 1
@@ -257,6 +277,7 @@ Player:
 			hpad: 20
 			afld: 20
 			afld.ukraine: 20
+            afld.mideast: 20
 			atek: 1
 			stek: 1
 			spen: 1
@@ -286,9 +307,12 @@ Player:
 		RequiresCondition: enable-rush-ai
 		UnitsToBuild:
 			e1: 65
+            e1ak: 65
 			e2: 15
 			e3: 30
 			e4: 15
+            vest: 10
+            sniper: 20
 			dog: 15
 			shok: 15
 			harv: 10
@@ -303,6 +327,8 @@ Player:
 			4tnk: 25
 			ttnk: 25
 			stnk: 5
+            katyusha: 15
+            guntnk: 20
 		UnitLimits:
 			dog: 4
 			harv: 8
@@ -319,6 +345,9 @@ Player:
 		RequiresCondition: enable-normal-ai
 		UnitsToBuild:
 			e1: 65
+            e1ak: 65
+            vest: 30
+            sniper: 40
 			e2: 15
 			e3: 30
 			e4: 15
@@ -334,12 +363,16 @@ Player:
 			2tnk: 50
 			3tnk: 50
 			4tnk: 25
+            katyusha: 50
+            guntnk: 30
 			ttnk: 25
 			stnk: 5
 			heli: 30
 			mh60: 30
 			mig: 30
 			yak: 30
+            bushbomb: 30
+            yayk: 40
 			ss: 10
 			msub: 10
 			dd: 10
@@ -364,6 +397,9 @@ Player:
 			e2: 15
 			e3: 30
 			e4: 15
+            e1ak: 65
+            vest: 10
+            sniper: 20
 			dog: 15
 			shok: 15
 			harv: 15
@@ -378,10 +414,14 @@ Player:
 			4tnk: 25
 			ttnk: 25
 			stnk: 10
+            katyusha: 15
+            guntnk: 20
 			heli: 30
 			mh60: 30
 			mig: 30
 			yak: 30
+            bushbomb: 20
+            yayk: 30
 			ss: 10
 			msub: 10
 			dd: 10
@@ -402,15 +442,42 @@ Player:
 	UnitBuilderBotModule@naval:
 		RequiresCondition: enable-naval-ai
 		UnitsToBuild:
-			harv: 1
+			e1: 30
+            e1ak: 65
+            vest: 40
+            sniper: 50
+			e2: 15
+			e3: 30
+			e4: 15
+			dog: 15
+			shok: 15
+			harv: 20
+			apc: 25
+			jeep: 20
+			arty: 15
+			v2rl: 20
+			ftrk: 20
+			1tnk: 30
+			2tnk: 30
+			3tnk: 50
+			4tnk: 25
+            katyusha: 70
+            guntnk: 60
+			ttnk: 25
+			stnk: 5
 			heli: 30
 			mh60: 30
 			mig: 30
 			yak: 30
+            bushbomb: 50
+            yayk: 40
 			ss: 10
-			msub: 30
-			dd: 30
-			ca: 20
+			msub: 10
+			dd: 10
+			ca: 10
 			pt: 10
 		UnitLimits:
-			harv: 8
+			dog: 4
+			harv: 10
+			jeep: 4
+			ftrk: 4
