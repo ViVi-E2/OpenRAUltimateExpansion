@@ -64,7 +64,7 @@ GUNTNK:
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Health:
-		HP: 90000
+		HP: 75000
 	Armor:
 		Type: Heavy
 	Mobile:
