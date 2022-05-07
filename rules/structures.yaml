@@ -1135,7 +1135,7 @@ FACT:
 		Prerequisites: ~disabled
 		Description: Produces structures.
 	ProvidesPrerequisite@allies:
-		Factions: allies, england, france, germany
+		Factions: allies, england, france, germany, canada
 		Prerequisite: structures.allies
 	ProvidesPrerequisite@alliesvanilla:
 		Factions: allies
@@ -1150,7 +1150,7 @@ FACT:
 		Factions: germany
 		Prerequisite: structures.germany
 	ProvidesPrerequisite@soviet:
-		Factions: soviet, russia, ukraine, mideast
+		Factions: soviet, russia, ukraine, mideast, siberia
 		Prerequisite: structures.soviet
 	ProvidesPrerequisite@sovietvanilla:
 		Factions: soviet
