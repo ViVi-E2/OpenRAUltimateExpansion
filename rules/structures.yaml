@@ -648,7 +648,7 @@ DOME:
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 90
-		Prerequisites: proc, ~techlevel.medium
+		Prerequisites: proc, ~techlevel.medium, ~!general.rebel
 		Description: Provides an overview\nof the battlefield.\nRequires power to operate.
 	Valued:
 		Cost: 1800
@@ -1018,7 +1018,7 @@ WEAP:
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 80
-		Prerequisites: proc, ~techlevel.low
+		Prerequisites: proc, ~techlevel.low, ~!general.rebel
 		Description: Produces vehicles.
 	Valued:
 		Cost: 2000
@@ -2077,7 +2077,7 @@ FIX:
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 100
-		Prerequisites: weap, ~techlevel.medium
+		Prerequisites: weap, ~techlevel.medium, ~!general.rebel
 		Description: Repairs vehicles for credits.
 	Valued:
 		Cost: 1200
