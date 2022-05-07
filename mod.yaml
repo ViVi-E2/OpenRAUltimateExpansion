@@ -60,6 +60,7 @@ Rules:
     ra|rules/vehicles_mideast.yaml
     ra|rules/infantry_rebel.yaml
     ra|rules/structures_rebel.yaml
+    ra|rules/misc_rebel.yaml
     #ra|rules/infantry_canada.yaml
     #ra|rules/aircraft_canada.yaml
     #ra|rules/vehicles_canada.yaml
