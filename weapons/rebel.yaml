@@ -1,0 +1,17 @@
+PistolGlock:
+	Inherits: ^LightMG
+	ReloadDelay: 7
+	Range: 3c0
+	Report: gun27.aud
+	Warhead@1Dam: SpreadDamage
+		Damage: 500
+		Versus:
+			None: 100
+			Wood: 5
+			Light: 1
+			Heavy: 1
+			Concrete: 1
+	Warhead@2Eff: CreateEffect
+		Inaccuracy: 64
+	Warhead@3EffWater: CreateEffect
+		Inaccuracy: 64
