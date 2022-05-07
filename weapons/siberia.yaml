@@ -1,1 +1,23 @@
-uwu:
+TankFire:
+	Inherits: ^FireWeapon
+	ReloadDelay: 50
+	Burst: 15
+	BurstDelays: 1
+	Projectile: Bullet
+		Speed: 170
+		TrailImage: fb4
+		Image: fb3
+		LaunchAngle: 62
+		Inaccuracy: 853
+	Warhead@1Dam: SpreadDamage
+		Spread: 341
+		Damage: 1800
+		Versus:
+			None: 120
+			Wood: 90
+			Tree: 80
+			Light: 50
+			Heavy: 40
+			Concrete: 10
+	Warhead@3Eff: CreateEffect
+		Explosions: small_napalm
