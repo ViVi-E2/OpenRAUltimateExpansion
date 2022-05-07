@@ -5,10 +5,10 @@ FireTank:
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 320
-		Prerequisites: fix, stek, ~vehicles.soviet, ~techlevel.high, ~!vehicles.mideast
-		Description: Big and slow tank, with anti-air capability.\nCan crush concrete walls.\n  Strong vs Vehicles, Infantry, Aircraft\n  Weak vs Nothing
+		Prerequisites: 
+		Description: Beefy tank that will set the opponent ablaze.
 	Valued:
-		Cost: 1
+		Cost: 1600
 	Tooltip:
 		Name: Fire Tank
 		GenericName: Tank
@@ -49,3 +49,5 @@ FireTank:
 		Prerequisites: vehicles.upgraded
 	Selectable:
 		DecorationBounds: 44,38,0,-4
+    RenderSprites:
+        Image: 4tnk
