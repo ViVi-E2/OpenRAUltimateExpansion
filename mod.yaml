@@ -63,8 +63,9 @@ Rules:
     #ra|rules/infantry_canada.yaml
     #ra|rules/aircraft_canada.yaml
     #ra|rules/vehicles_canada.yaml
-    #ra|rules/infantry_siberia.yaml
+    ra|rules/infantry_siberia.yaml
     ra|rules/vehicles_siberia.yaml
+    ra|rules/structures_siberia.yaml
 
 Sequences:
 	ra|sequences/ships.yaml
@@ -149,6 +150,7 @@ Weapons:
 	ra|weapons/smallcaliber.yaml
 	ra|weapons/superweapons.yaml
     ra|weapons/mideast.yaml
+    ra|weapons/siberia.yaml
 
 Voices:
 	ra|audio/voices.yaml
