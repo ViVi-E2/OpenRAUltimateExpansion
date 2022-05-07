@@ -47,6 +47,10 @@ BADR.Bomber:
 		Ammo: 5
 	Armament:
 		Weapon: ParaBomb
+JEEP.Drop:
+    Inherits: BADR
+    RenderSprites:
+		Image: jeep
 
 HELI.Bomber:
 	Inherits: BADR
