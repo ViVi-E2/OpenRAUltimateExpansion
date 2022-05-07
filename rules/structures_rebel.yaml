@@ -3,7 +3,7 @@ MINETENT:
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 60
-		Prerequisites: ~techlevel.infonly
+		Prerequisites: ~general.rebel
 		Description: Refines Ore and Gems\ninto credits.
 	Valued:
 		Cost: 1
