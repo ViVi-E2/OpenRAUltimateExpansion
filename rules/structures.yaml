@@ -860,7 +860,7 @@ FTUR:
 	Buildable:
 		Queue: Defense
 		BuildPaletteOrder: 60
-		Prerequisites: barr, ~structures.soviet, ~techlevel.low
+		Prerequisites: barr, ~structures.soviet, ~techlevel.low, ~!structures.siberia
 		Description: Anti-Infantry base defense.\nCan detect cloaked units.\n  Strong vs Infantry, Light armor\n  Weak vs Tanks, Aircraft
 	Valued:
 		Cost: 600
@@ -1106,6 +1106,9 @@ WEAP:
 	ProvidesPrerequisite@ukrainianstructure:
 		RequiresPrerequisites: structures.ukraine
 		Prerequisite: vehicles.ukraine
+	ProvidesPrerequisite@siberiastructure:
+		RequiresPrerequisites: structures.siberia
+		Prerequisite: vehicles.siberia
 	ProductionBar:
 		ProductionType: Vehicle
 	Power:
@@ -1135,7 +1138,7 @@ FACT:
 		Prerequisites: ~disabled
 		Description: Produces structures.
 	ProvidesPrerequisite@allies:
-		Factions: allies, england, france, germany, canada
+		Factions: allies, england, france, germany
 		Prerequisite: structures.allies
 	ProvidesPrerequisite@alliesvanilla:
 		Factions: allies
@@ -1148,7 +1151,7 @@ FACT:
 		Prerequisite: structures.france
 	ProvidesPrerequisite@germany:
 		Factions: germany
-		Prerequisite: structures.germany
+		Prerequisite: structures.germany, canada
 	ProvidesPrerequisite@soviet:
 		Factions: soviet, russia, ukraine, mideast, siberia
 		Prerequisite: structures.soviet
@@ -1465,7 +1468,7 @@ AFLD:
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 130
-		Prerequisites: dome, ~structures.soviet, ~techlevel.medium, ~!structures.ukraine, ~!structures.mideast
+		Prerequisites: dome, ~structures.soviet, ~techlevel.medium, ~!structures.ukraine, ~!structures.mideast, ~!structures.siberia
 		Description: Produces and reloads aircraft.\n  Special Ability: Spy Plane\n  Special Ability: Paratroopers
 	Valued:
 		Cost: 500
@@ -1510,6 +1513,9 @@ AFLD:
 	ProvidesPrerequisite@mideast:
 		Factions: mideast
 		Prerequisite: aircraft.mideast
+    ProvidesPrerequisite@siberia:
+		Factions: siberia
+		Prerequisite: aircraft.siberia
 	ProvidesPrerequisite@sovietstructure:
 		RequiresPrerequisites: structures.soviet
 		Prerequisite: aircraft.soviet
@@ -1545,7 +1551,7 @@ AFLD:
 		SupportPowerPaletteOrder: 60
 	ParatroopersPower@paratroopers:
 		OrderName: SovietParatroopers
-		Prerequisites: aircraft.soviet
+		Prerequisites: aircraft.soviet, ~!aircraft.siberia
 		Icon: paratroopers
 		ChargeInterval: 7500
 		Description: Paratroopers
@@ -1616,7 +1622,7 @@ AFLD.Mideast:
 		Description: Produces and reloads aircraft.\n  Special Ability: Spy Plane\n  Special Ability: Vest Paratroopers\n  Special Ability: Apachebombs
 	AirstrikePower@parabombs:
 		OrderName: UkraineParabombs
-		Prerequisites: aircraft.mideast
+		Prerequisites: aircraft.siberia
 		Icon: apachebomb
 		ChargeInterval: 1500
 		Description: Apache Bombs
@@ -1660,6 +1666,37 @@ AFLD.Mideast:
 	RenderSprites:
 		Image: afld
 
+
+AFLD.Siberia:
+	Inherits: AFLD
+	Buildable:
+		Prerequisites: dome, ~techlevel.medium, ~structures.siberia
+		Description: Produces and reloads aircraft.\n  Special Ability: Spy Plane\n  Special Ability: Napalm Strike
+	AirstrikePower@napalmstrike:
+		OrderName: SiberiaNapalmStrike
+		Prerequisites: aircraft.siberia
+		Icon: apachebomb
+		ChargeInterval: 5000
+		Description: Napalm Strike
+		LongDesc: Single targeted napalm airstrike
+		SelectTargetSpeechNotification: SelectTarget
+		CameraActor: camera
+		CameraRemoveDelay: 75
+		UnitType: mignapalmbomber
+		QuantizedFacings: 8
+		DisplayBeacon: true
+		BeaconPoster: apachebox
+		SquadSize: 1
+		SquadOffset: 1792,1792,0
+		ArrowSequence: arrow
+		ClockSequence: clock
+		CircleSequence: circles
+		UseDirectionalTarget: True
+		DirectionArrowAnimation: paradirection
+		SupportPowerPaletteOrder: 40
+
+	RenderSprites:
+		Image: afld
 POWR:
 	Inherits: ^Building
 	Inherits@POWER_OUTAGE: ^DisabledByPowerOutage
@@ -1856,6 +1893,9 @@ BARR:
     ProvidesPrerequisite@mideaststructure:
 		RequiresPrerequisites: structures.mideast
 		Prerequisite: infantry.mideast
+    ProvidesPrerequisite@siberiastructure:
+		RequiresPrerequisites: structures.siberia
+		Prerequisite: infantry.siberia
 	Power:
 		Amount: -20
 	ProvidesPrerequisite@buildingname:

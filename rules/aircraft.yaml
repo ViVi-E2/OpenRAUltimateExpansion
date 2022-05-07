@@ -68,6 +68,25 @@ HELI.Bomber:
 	SmokeTrailWhenDamaged:
 		Offset: -427,0,0
 
+MigNapalmBomber:
+	Inherits: BADR
+	-ParaDrop:
+	-Cargo:
+	-MapEditorData:
+	AttackBomber:
+	AmmoPool:
+		Ammo: 1
+	Armament:
+		Weapon: NapalmStrike
+	RenderSprites:
+		Image: mh60
+	SpawnActorOnDeath:
+		Actor: MH60.Husk
+	SmokeTrailWhenDamaged:
+		Offset: -427,0,0
+    RenderSprites:
+        Image: mig
+
 MIG:
 	Inherits: ^Plane
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
