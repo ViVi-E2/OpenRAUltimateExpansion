@@ -68,6 +68,10 @@ e1:
 		Start: 256
 		Length: 16
 		Tick: 120
+    dead:
+		Start: 256
+		Length: 16
+		Tick: 120
 	idle1:
 		Start: 256
 		Length: 16
@@ -1065,6 +1069,35 @@ gnrl:
 		TilesetOverrides:
 			DESERT: TEMPERAT
 			INTERIOR: TEMPERAT
+    build:
+        Start: 184
+		Length: 8
+		Tick: 120
+    make:
+		Start: 184
+		Length: 8
+		Tick: 120
+    bib:
+		Start: 184
+		Length: 8
+		Tick: 120
+    idle2:
+		Start: 184
+		Length: 8
+		Tick: 120
+    dead:
+		Start: 256
+		Length: 8
+		Tick: 120
+	idle1:
+		Start: 184
+		Length: 8
+		Tick: 120
+    idle:
+		Start: 184
+		Length: 8
+		Tick: 120
+    icon: tenticon
 
 shok:
 	stand:

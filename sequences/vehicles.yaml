@@ -3,6 +3,28 @@ mcv:
 		Facings: 32
 		UseClassicFacings: True
 	icon: mcvicon
+	make: factmake
+		Length: *
+	build:
+		Start: 1
+		Length: 25
+	pdox: factpdox
+		Length: 1
+	damaged-idle:
+		Start: 26
+	damaged-build:
+		Start: 27
+		Length: 1
+	damaged-pdox: factpdox
+		Start: 16
+		Length: 1
+	dead: factdead
+		Tick: 800
+	bib: bib2
+		Length: *
+		UseTilesetExtension: true
+		TilesetOverrides:
+			INTERIOR: TEMPERAT
 
 mcvhusk:
 	idle:
