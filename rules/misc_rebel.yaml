@@ -33,3 +33,10 @@ BEZOSCRATE:
 		SelectionShares: 0
 		NoBaseSelectionShares: 100
 		Units: mcv
+
+camera.flare:
+	Inherits: CAMERA
+	EditorOnlyTooltip:
+		Name: (support power proxy camera)
+    RevealsShroud:
+		Range: 10c0

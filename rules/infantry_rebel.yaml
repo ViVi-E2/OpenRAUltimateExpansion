@@ -1,17 +1,12 @@
 GENERAL:
-	Inherits: ^Building
-    Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
-	Selectable:
-		Bounds: 72,72
-	Building:
-		Footprint: xxX xxx XxX ===
-		Dimensions: 3,4
-		LocalCenterOffset: 0,-512,0
+    Inherits: ^Soldier
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Buildable:
 		Queue: Infantry
-		BuildPaletteOrder: 1000
-		Prerequisites: radarreb
-		Description: Produces structures.
+		BuildAtProductionType: Soldier
+		BuildPaletteOrder: 10
+		Prerequisites: ~disabled
+		Description: If you're reading this, Fricc u
 	ProvidesPrerequisite@rebel:
 		Factions: rebel
 		Prerequisite: general.rebel
@@ -28,46 +23,33 @@ GENERAL:
 	Production:
 		Produces: Building, Defense
 	Valued:
-		Cost: 3000
+		Cost: 2000
 	Tooltip:
 		Name: Construction Yard
-	BaseBuilding:
 	Sellable:
 		RequiresCondition: !build-incomplete && !chrono-vortex && !being-captured && !being-demolished
-	GrantConditionOnPrerequisite@GLOBALFACTUNDEPLOY:
-		Condition: factundeploy
-		Prerequisites: global-factundeploy
 	ProductionBar@Building:
 		ProductionType: Building
-	ProductionBar@Defense:
-		ProductionType: Defense
-		Color: 8A8A8A
 	BaseProvider:
-		PauseOnCondition: being-captured
 		Range: 16c0
-	WithBuildingBib:
-	WithBuildingPlacedAnimation:
-		RequiresCondition: !build-incomplete && !chrono-vortex
 	Power:
 		Amount: 0
-	WithDeathAnimation:
-		DeathSequence: dead
-		UseDeathTypeSuffix: false
-	ProvidesPrerequisite@buildingname:
-	HitShape:
-		TargetableOffsets: 1273,939,0, -980,-640,0, -980,640,0
-		Type: Rectangle
-			TopLeft: -1536, -1536
-			BottomRight: 1536, 1536
     Mobile:
-		Speed: 56
-		AlwaysTurnInPlace: true
+		Speed: 40
 		Locomotor: foot
-    Armament:
-		Weapon: AK47
-    AttackFrontal:
     RenderSprites:
-	    Image: e1
+	    Image: gnrl
+    MustBeDestroyed:
+		RequiredForShortGame: True
+    GpsDot:
+		String: Structure
+    RepairableBuilding:
+		RepairStep: 700
+		PlayerExperience: 25
+		RepairingNotification: Repairing
+    UpdatesPlayerStatistics:
+	GivesBuildableArea:
+		AreaTypes: building, fake
 
 
 MINER:
@@ -225,7 +207,7 @@ REC:
 		ChargeInterval: 2500
 		Description: Paratroopers Bomber
 		LongDesc: A Flying Jeep drops a squad of 'Splodey bois\nanywhere on the map.
-		DropItems: E3, E3, E2, E2, E4
+		DropItems: E3, E3, E2, E2, E4, FLAREGUNMAN
 		ReinforcementsArrivedSpeechNotification: ReinforcementsArrived
 		SelectTargetSpeechNotification: SelectTarget
 		AllowImpassableCells: false
@@ -336,7 +318,25 @@ MEINBEZOS:
 		Amount: 10
     RenderSprites:
 	    Image: e1
+        
+CLEZOS:
+	Inherits: MEINBEZOS
+	Buildable:
+		Prerequisites: ~disabled
+    Cloak:
+		InitialDelay: 5
+		CloakDelay: 5
+		UncloakOn: Demolish
+		CloakTypes: Cloak
+		IsPlayerPalette: true
+		PauseOnCondition: cloak-force-disabled
+	GrantConditionOnDamageState@UNCLOAK:
+		Condition: cloak-force-disabled
+		ValidDamageStates: Critical
+    AmmoPool:
+		Ammo: 69
 
+        
 EngiReb:
 	Inherits: ^Soldier
 	Inherits@selection: ^SelectableSupportUnit
@@ -347,7 +347,7 @@ EngiReb:
 		Prerequisites: ~barracks, ~techlevel.infonly, ~infantry.rebel
 		Description: Infiltrates and captures\nenemy structures.\n  Unarmed
 	Valued:
-		Cost: 600
+		Cost: 1000
 	Tooltip:
 		Name: Engineer
 	UpdatesPlayerStatistics:
@@ -393,6 +393,8 @@ EngiReb:
 		ValidDamageStates: Critical
     RenderSprites:
 	    Image: e6
+    Power:
+        Amount: -10
 
 SPYReb:
 	Inherits: ^Soldier
@@ -401,10 +403,10 @@ SPYReb:
 		Queue: Infantry
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 90
-		Prerequisites: ~infantry.rebel, ~techlevel.medium, radarreb
+		Prerequisites: ~infantry.rebel, ~techlevel.medium
 		Description: Infiltrates enemy structures for intel or\nsabotage. Exact effect depends on the\nbuilding infiltrated.\nLoses disguise when attacking.\nCan detect spies.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft\n  Special Ability: Disguised
 	Valued:
-		Cost: 700
+		Cost: 1000
 	-Tooltip:
 	DisguiseTooltip:
 		Name: Spy
@@ -460,6 +462,8 @@ SPYReb:
 		ValidDamageStates: Critical
     RenderSprites:
 	    Image: spy
+    Power:
+        Amount: -10
      
 
 
@@ -469,10 +473,10 @@ THFReb:
 		Queue: Infantry
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 110
-		Prerequisites: ~techlevel.medium, ~!infantry.mideast, infantry.rebel
+		Prerequisites: ~techlevel.medium, ~!infantry.mideast, ~infantry.rebel
 		Description: Steals enemy credits.\nHijacks enemy vehicles.\n  Unarmed
 	Valued:
-		Cost: 700
+		Cost: 1000
 	Tooltip:
 		Name: Thief
 	UpdatesPlayerStatistics:
@@ -514,3 +518,94 @@ THFReb:
 	-AttackFrontal:
     RenderSprites:
 	    Image: thf
+    Power:
+        Amount: -10
+        
+SNIPER2:
+	Inherits: ^Soldier
+	Valued:
+		Cost: 700
+	Tooltip:
+		Name: Sad Sniper
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+		Queue: Infantry
+		BuildAtProductionType: Soldier
+		BuildPaletteOrder: 80
+		Prerequisites: ~general.rebel
+		Description: Elite sniper infantry unit.\nCan see cloaked units.\nShe lost her Sniper Rifle in the war/nShe now uses a pistol
+	Health:
+		HP: 8000
+	Passenger:
+		CustomPipType: red
+	RevealsShroud:
+		Range: 14c0
+	AutoTarget:
+		InitialStance: HoldFire
+		InitialStanceAI: ReturnFire
+	AutoTargetPriority@DEFAULT:
+		ValidTargets: Infantry
+	Armament@PRIMARY:
+		Weapon: Pistol
+	Armament@GARRISONED:
+		Name: garrisoned
+		Weapon: Pistol
+		MuzzleSequence: garrison-muzzle
+	WithInfantryBody:
+		DefaultAttackSequence: shoot
+	Cloak:
+		InitialDelay: 250
+		CloakDelay: 120
+		CloakSound:
+		UncloakSound:
+		UncloakOn: Attack, Unload, Infiltrate, Demolish, Move
+		IsPlayerPalette: true
+		PauseOnCondition: cloak-force-disabled
+	GrantConditionOnDamageState@UNCLOAK:
+		Condition: cloak-force-disabled
+		ValidDamageStates: Critical
+	-MustBeDestroyed:
+	ProducibleWithLevel:
+		Prerequisites: barracks.upgraded
+    Mobile:
+		Speed: 40
+    RenderSprites:
+	    Image: sniper
+        
+FLAREGUNMAN:
+	Inherits: ^Soldier
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Buildable:
+		Queue: Infantry
+		BuildAtProductionType: Soldier
+		BuildPaletteOrder: 10
+		Prerequisites: ~disabled
+		Description: General-purpose infantry.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
+	Selectable:
+		Class: E1
+	Valued:
+		Cost: 100
+	Tooltip:
+		Name: Flare gun Weilder
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Health:
+		HP: 5000
+	Armament@PRIMARY:
+		Weapon: FlareGun
+	Armament@GARRISONED:
+		Name: garrisoned
+		Weapon: FlareGun
+		MuzzleSequence: garrison-muzzle
+	WithInfantryBody:
+		DefaultAttackSequence: shoot
+		RequiresCondition: !parachute
+	WithInfantryBody@PARACHUTE:
+		StandSequences: parachute
+		RequiresCondition: parachute
+	ProducibleWithLevel:
+		Prerequisites: barracks.upgraded
+    RenderSprites:
+	    Image: e3
+       
