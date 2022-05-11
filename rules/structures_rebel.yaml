@@ -171,7 +171,7 @@ RadarReb:
 		Prerequisites: minetent, ~techlevel.medium, ~general.rebel
 		Description: Provides an overview\nof the battlefield.\nRequires power to operate.
 	Valued:
-		Cost: 1800
+		Cost: 900
 	Tooltip:
 		Name: Radar Dome
 	Building:
@@ -220,7 +220,7 @@ ApowerReb:
 		Prerequisites: radarreb, ~techlevel.medium, ~general.rebel
 		Description: Provides power
 	Valued:
-		Cost: 700
+		Cost: 400
 	Tooltip:
 		Name: Power Plant
 	ProvidesPrerequisite:

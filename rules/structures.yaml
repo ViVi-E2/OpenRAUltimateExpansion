@@ -1746,7 +1746,7 @@ APWR:
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 110
-		Prerequisites: dome, ~techlevel.medium
+		Prerequisites: dome, ~techlevel.medium, ~!general.rebel
 		Description: Provides double the power of\na standard Power Plant.
 	Valued:
 		Cost: 500

@@ -1,12 +1,14 @@
 GENERAL:
     Inherits: ^Soldier
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+    Selectable:
+		Bounds: 48,48
 	Buildable:
 		Queue: Infantry
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 10
 		Prerequisites: ~disabled
-		Description: If you're reading this, Fricc u
+		Description: Disabled
 	ProvidesPrerequisite@rebel:
 		Factions: rebel
 		Prerequisite: general.rebel
@@ -21,11 +23,11 @@ GENERAL:
 	RevealsShroud@GAPGEN:
 		Range: 4c0
 	Production:
-		Produces: Building, Defense
+		Produces: Building, Infantry, Soldier
 	Valued:
 		Cost: 2000
 	Tooltip:
-		Name: Construction Yard
+		Name: General
 	Sellable:
 		RequiresCondition: !build-incomplete && !chrono-vortex && !being-captured && !being-demolished
 	ProductionBar@Building:
@@ -50,7 +52,18 @@ GENERAL:
     UpdatesPlayerStatistics:
 	GivesBuildableArea:
 		AreaTypes: building, fake
-
+    Exit@1:
+		RequiresCondition: !being-captured
+		SpawnOffset: -170,810,0
+		ExitCell: 1,2
+		ProductionTypes: Soldier, Infantry
+	Exit@2:
+		RequiresCondition: !being-captured
+		SpawnOffset: -725,640,0
+		ExitCell: 0,2
+		ProductionTypes: Soldier, Infantry
+	GrantExternalConditionToProduced:
+		Condition: produced
 
 MINER:
     Inherits: ^Vehicle
@@ -58,10 +71,10 @@ MINER:
 	Buildable:
 		Queue: Infantry
 		BuildPaletteOrder: 110
-		Prerequisites: ~techlevel.infonly, ~general.rebel
+		Prerequisites: ~techlevel.infonly, ~general.rebel, rec, minetent
 		Description: Collects Ore and Gems for processing.\n  Unarmed
 	Valued:
-		Cost: 900
+		Cost: 800
 	Tooltip:
 		Name: Miner
 		GenericName: Harvester
@@ -116,27 +129,18 @@ MINER:
 	    Image: e1
         
 REC:
-	Inherits: ^Building
-	Inherits@shape: ^2x2Shape
-	Inherits@PRIMARY: ^PrimaryBuilding
+	Inherits: ^Soldier
 	Selectable:
 		Bounds: 48,48
-	HitShape:
-		UseTargetableCellsOffsets: false
-		TargetableOffsets: 0,0,0, 630,-512,0, 355,512,0, -281,-512,0, -630,512,0
 	Buildable:
-		Queue: Building
+		Queue: Infantry
 		BuildPaletteOrder: 20
 		Prerequisites: ~general.rebel
-		Description: Trains infantry.
+		Description: Provides manpower/nHelps the general build.
 	Valued:
 		Cost: 500
 	Tooltip:
 		Name: Mr. Recruiter
-	Building:
-		Footprint: xx xx ==
-		Dimensions: 2,3
-		LocalCenterOffset: 0,-512,0
 	Health:
 		HP: 60000
 	Armor:
@@ -151,8 +155,6 @@ REC:
 		RevealGeneratedShroud: False
 	RevealsShroud@GAPGEN:
 		Range: 4c0
-	WithBuildingBib:
-	RallyPoint:
 	Exit@1:
 		RequiresCondition: !being-captured
 		SpawnOffset: -42,810,0
@@ -223,7 +225,13 @@ REC:
 		DirectionArrowAnimation: paradirection
 		SupportPowerPaletteOrder: 50
     RenderSprites:
-	    Image: e1
+	    Image: gnrl
+    GpsDot:
+		String: Structure
+    RepairableBuilding:
+		RepairStep: 700
+		PlayerExperience: 25
+		RepairingNotification: Repairing
         
 PistolGril:
 	Inherits: ^Soldier
@@ -232,7 +240,7 @@ PistolGril:
 		Queue: Infantry
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 10
-		Prerequisites: ~infantry.rebel
+		Prerequisites: ~general.rebel, rec
 		Description: General-purpose infantry.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft\nOnly has a mere pistol
 	Selectable:
 		Class: E1
@@ -270,12 +278,12 @@ MEINBEZOS:
 		Queue: Infantry
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 10
-		Prerequisites: ~infantry.rebel
+		Prerequisites: ~general.rebel, rec
 		Description: The owner of Amazon, Will bomb? yOUR doorstep
 	Selectable:
 		Class: E1
 	Valued:
-		Cost: 2175
+		Cost: 2100
 	Tooltip:
 		Name: Mein Bezos
 	UpdatesPlayerStatistics:
@@ -344,10 +352,10 @@ EngiReb:
 		Queue: Infantry
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 60
-		Prerequisites: ~barracks, ~techlevel.infonly, ~infantry.rebel
+		Prerequisites: ~techlevel.infonly, ~general.rebel, rec
 		Description: Infiltrates and captures\nenemy structures.\n  Unarmed
 	Valued:
-		Cost: 1000
+		Cost: 600
 	Tooltip:
 		Name: Engineer
 	UpdatesPlayerStatistics:
@@ -369,12 +377,12 @@ EngiReb:
 		RequiresCondition: !global-reusable-engineers
 		CaptureTypes: building
 		PlayerExperience: 25
-		CaptureDelay: 200
+		CaptureDelay: 1
 	Captures@REUSABLE:
 		RequiresCondition: global-reusable-engineers
 		CaptureTypes: building
 		PlayerExperience: 25
-		CaptureDelay: 375
+		CaptureDelay: 1
 		ConsumedByCapture: False
 		EnterCursor: ability
 		EnterBlockedCursor: move-blocked
@@ -395,6 +403,9 @@ EngiReb:
 	    Image: e6
     Power:
         Amount: -10
+    Mobile:
+		Speed: 69
+		Locomotor: foot
 
 SPYReb:
 	Inherits: ^Soldier
@@ -403,10 +414,10 @@ SPYReb:
 		Queue: Infantry
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 90
-		Prerequisites: ~infantry.rebel, ~techlevel.medium
+		Prerequisites: ~general.rebel, ~techlevel.medium, rec
 		Description: Infiltrates enemy structures for intel or\nsabotage. Exact effect depends on the\nbuilding infiltrated.\nLoses disguise when attacking.\nCan detect spies.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft\n  Special Ability: Disguised
 	Valued:
-		Cost: 1000
+		Cost: 500
 	-Tooltip:
 	DisguiseTooltip:
 		Name: Spy
@@ -464,6 +475,8 @@ SPYReb:
 	    Image: spy
     Power:
         Amount: -10
+    Health:
+		HP: 100001
      
 
 
@@ -473,16 +486,16 @@ THFReb:
 		Queue: Infantry
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 110
-		Prerequisites: ~techlevel.medium, ~!infantry.mideast, ~infantry.rebel
-		Description: Steals enemy credits.\nHijacks enemy vehicles.\n  Unarmed
+		Prerequisites: ~techlevel.medium, ~general.rebel, rec
+		Description: Steals enemy credits.\nHijacks enemy vehicles and aircraft.\n  Unarmed
 	Valued:
-		Cost: 1000
+		Cost: 600
 	Tooltip:
 		Name: Thief
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Health:
-		HP: 5000
+		HP: 10000
 	RevealsShroud:
 		Range: 5c0
 	Passenger:
@@ -502,7 +515,7 @@ THFReb:
 		IdleSequences: idle
 		StandSequences: stand
 	Crushable:
-		WarnProbability: 95
+		WarnProbability: 100
 	Cloak:
 		InitialDelay: 5
 		CloakDelay: 5
@@ -524,7 +537,7 @@ THFReb:
 SNIPER2:
 	Inherits: ^Soldier
 	Valued:
-		Cost: 700
+		Cost: 400
 	Tooltip:
 		Name: Sad Sniper
 	UpdatesPlayerStatistics:
@@ -533,7 +546,7 @@ SNIPER2:
 		Queue: Infantry
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 80
-		Prerequisites: ~general.rebel
+		Prerequisites: ~general.rebel, rec
 		Description: Elite sniper infantry unit.\nCan see cloaked units.\nShe lost her Sniper Rifle in the war/nShe now uses a pistol
 	Health:
 		HP: 8000
@@ -591,13 +604,12 @@ FLAREGUNMAN:
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Health:
-		HP: 5000
+		HP: 10000
 	Armament@PRIMARY:
 		Weapon: FlareGun
 	Armament@GARRISONED:
 		Name: garrisoned
 		Weapon: FlareGun
-		MuzzleSequence: garrison-muzzle
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
 		RequiresCondition: !parachute
