@@ -162,6 +162,8 @@ APWRBite:
 	WithDeathAnimation:
 		DeathSequence: dead
 		UseDeathTypeSuffix: false
+    RenderSprites:
+		Image: apwr
 
 BiterMine:
 	Inherits: ^TechBuilding
