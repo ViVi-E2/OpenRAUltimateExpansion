@@ -51,6 +51,7 @@ oilb:
 		UseTilesetExtension: true
 		TilesetOverrides:
 			INTERIOR: TEMPERAT
+    icon: procicon
 
 fact:
 	idle:
@@ -78,6 +79,11 @@ fact:
 			INTERIOR: TEMPERAT
 	icon: facticon
 	fake-icon: facficon
+
+factair:
+	idle:
+
+	icon: facticon
 
 proc:
 	idle:
