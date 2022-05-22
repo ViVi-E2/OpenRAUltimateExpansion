@@ -7,6 +7,7 @@ GenericVoice:
         rebel: .v01,.v03
         biter: .v01,.v03
         canadia: .v01,.v03
+        air: .v01,.v03
 		soviet: .r01,.r03
 		russia: .r01,.r03
 		ukraine: .r01,.r03
@@ -29,6 +30,7 @@ VehicleVoice:
         rebel: .v00,.v02
         biter: .v00,.v02
         canadia: .v00,.v02
+        air: .v00,.v02
 		soviet: .r00,.r02
 		russia: .r00,.r02
 		ukraine: .r00,.r02
