@@ -63,6 +63,106 @@ BiterHive:
         Image: fact
         Scale: 0.75
 
+Worm:
+	Inherits: ^Defense
+	Inherits@IDISABLE: ^DisableOnLowPowerOrPowerDown
+	Inherits@AUTOTARGET: ^AutoTargetAir
+	Inherits@shape: ^2x1Shape
+	Selectable:
+		Bounds: 48,24
+	HitShape:
+		Type: Rectangle
+			TopLeft: -768,-512
+			BottomRight: 768,512
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 100
+		Prerequisites: dome, ~structures.soviet, ~techlevel.medium
+		Description: Anti-Air base defense.\nRequires power to operate.\n  Strong vs Aircraft\n  Weak vs Ground units
+	Valued:
+		Cost: 700
+	Tooltip:
+		Name: Small Worm
+	Building:
+		Footprint: xx
+		Dimensions: 2,1
+	Health:
+		HP: 40000
+	Armor:
+		Type: Heavy
+	RevealsShroud:
+		MinRange: 5c0
+		Range: 8c0
+		RevealGeneratedShroud: False
+	RevealsShroud@GAPGEN:
+		Range: 5c0
+	WithBuildingBib:
+		HasMinibib: true
+	Turreted:
+		TurnSpeed: 120
+		InitialFacing: 0
+		RealignDelay: -1
+		RequiresCondition: !build-incomplete
+	WithSpriteTurret:
+		RequiresCondition: !build-incomplete
+		Recoils: false
+	Armament:
+		Weapon: Nike
+		LocalOffset: 0,0,320
+		MuzzleSequence: muzzle
+	AttackTurreted:
+		RequiresCondition: !build-incomplete
+		PauseOnCondition: disabled
+	WithMuzzleOverlay:
+	RenderRangeCircle:
+		RangeCircleType: aa
+	Power:
+		Amount: -40
+	-BodyOrientation:
+	ClassicFacingBodyOrientation:
+    RenderSprites:
+		Image: oilb
+
+APWRBite:
+	Inherits: ^Building
+	Inherits@POWER_OUTAGE: ^DisabledByPowerOutage
+	Inherits@shape: ^3x2Shape
+	HitShape:
+		TargetableOffsets: -355,-1024,0
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 110
+		Prerequisites: ~structures.biter, biternestmedium
+		Description: Provides double the power of\na standard Power Plant.
+	Valued:
+		Cost: 500
+	Tooltip:
+		Name: Advanced Power Plant
+	ProvidesPrerequisite:
+		Prerequisite: anypower
+	Building:
+		Footprint: xxx Xxx ===
+		Dimensions: 3,3
+		LocalCenterOffset: 0,-512,0
+	Selectable:
+		Bounds: 72,48
+		DecorationBounds: 72,68,0,-10
+	Health:
+		HP: 70000
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 5c0
+	WithBuildingBib:
+	Power:
+		Amount: 200
+	Targetable:
+		TargetTypes: GroundActor, Structure, C4, DetonateAttack, SpyInfiltrate
+	ScalePowerWithHealth:
+	WithDeathAnimation:
+		DeathSequence: dead
+		UseDeathTypeSuffix: false
+
 BiterMine:
 	Inherits: ^TechBuilding
 	Inherits@shape: ^2x2Shape
@@ -96,7 +196,7 @@ BiterMine:
 	EngineerRepairable:
 	CashTrickler:
 		Interval: 375
-		Amount: 100
+		Amount: 125
 	Tooltip:
 		Name: Biter Mine
 	TooltipDescription@ally:

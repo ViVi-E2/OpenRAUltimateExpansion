@@ -22,7 +22,7 @@ ExpandSmall:
 	Mobile:
 		Speed: 99
 		TurnSpeed: 48
-		Locomotor: lighttracked
+		Locomotor: swimst
 	-Crushable:
 	AutoTarget:
 		ScanRadius: 5
