@@ -648,7 +648,7 @@ DOME:
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 90
-		Prerequisites: proc, ~techlevel.medium, ~!general.rebel
+		Prerequisites: proc, ~techlevel.medium, ~!general.rebel, ~!structures.biter
 		Description: Provides an overview\nof the battlefield.\nRequires power to operate.
 	Valued:
 		Cost: 1800
@@ -1018,7 +1018,7 @@ WEAP:
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 80
-		Prerequisites: proc, ~techlevel.low, ~!general.rebel
+		Prerequisites: proc, ~techlevel.low, ~!general.rebel, ~!structures.biter
 		Description: Produces vehicles.
 	Valued:
 		Cost: 2000
@@ -1138,7 +1138,7 @@ FACT:
 		Prerequisites: ~disabled
 		Description: Produces structures.
 	ProvidesPrerequisite@allies:
-		Factions: allies, england, france, germany
+		Factions: allies, england, france, germany, canada, democrasea
 		Prerequisite: structures.allies
 	ProvidesPrerequisite@alliesvanilla:
 		Factions: allies
@@ -1151,7 +1151,7 @@ FACT:
 		Prerequisite: structures.france
 	ProvidesPrerequisite@germany:
 		Factions: germany
-		Prerequisite: structures.germany, canada
+		Prerequisite: structures.germany
 	ProvidesPrerequisite@soviet:
 		Factions: soviet, russia, ukraine, mideast, siberia
 		Prerequisite: structures.soviet
@@ -1173,6 +1173,9 @@ FACT:
     ProvidesPrerequisite@canada:
 		Factions: canada
 		Prerequisite: structures.canada
+    ProvidesPrerequisite@democrasea:
+		Factions: democrasea
+		Prerequisite: structures.democrasea
 	Health:
 		HP: 150000
 	Armor:
@@ -1251,7 +1254,7 @@ PROC:
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 60
-		Prerequisites: anypower, ~techlevel.infonly, ~!general.rebel
+		Prerequisites: anypower, ~techlevel.infonly, ~!general.rebel, ~!structures.biter
 		Description: Refines Ore and Gems\ninto credits.
 	Valued:
 		Cost: 1400
@@ -1746,7 +1749,7 @@ APWR:
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 110
-		Prerequisites: dome, ~techlevel.medium, ~!general.rebel
+		Prerequisites: dome, ~techlevel.medium, ~!general.rebel, ~!structures.biter, ~!structures.biter
 		Description: Provides double the power of\na standard Power Plant.
 	Valued:
 		Cost: 500
@@ -2077,7 +2080,7 @@ FIX:
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 100
-		Prerequisites: weap, ~techlevel.medium, ~!general.rebel
+		Prerequisites: weap, ~techlevel.medium, ~!general.rebel, ~!structures.biter
 		Description: Repairs vehicles for credits.
 	Valued:
 		Cost: 1200

@@ -9,6 +9,19 @@
 		DefeatMusic: map
 	TerrainGeometryOverlay:
 	DebugVisualizations:
+    Locomotor@SWIMST:
+		Name: swimst
+		Crushes: mine, crate
+		SharesCell: true
+		TerrainSpeeds:
+			Clear: 90
+			Rough: 80
+			Road: 100
+			Bridge: 100
+			Ore: 80
+			Gems: 80
+			Beach: 80
+            Water: 80
 	Locomotor@FOOT:
 		Name: foot
 		Crushes: mine, crate
@@ -144,12 +157,22 @@
 		Name: Deep Siberia
 		InternalName: siberia
 		Side: Soviet
-		Description: UwU So Deep
+		Description: Deep Siberia: Slash and Burn Tactics\nSpecial Ability: Napalm Strike\nSpecial Units: Expanded Flaming Weaponry
     Faction@11:
 		Name: Canadia
 		InternalName: canada
 		Side: Allies
 		Description: OOOHHH CANADA~
+    Faction@12:
+		Name: Biters
+		InternalName: biter
+		Side: Soviet
+		Description: Swarm your enemies with many small biters
+    Faction@13:
+		Name: fAIRly AIRy despAIR
+		InternalName: air
+		Side: Allies
+		Description: fAIRly AIRy despAIR: Air\nHaHa, flying cars and structures?
 	Faction@random:
 		Name: Any
 		InternalName: Random
@@ -251,6 +274,16 @@ World:
 		ClassName: MCV Only
 		Factions: rebel
 		BaseActor: general
+    MPStartUnits@mcvonlybiter:
+		Class: none
+		ClassName: MCV Only
+		Factions: biter
+		BaseActor: expandsmall
+    MPStartUnits@mcvonlyair:
+		Class: none
+		ClassName: MCV Only
+		Factions: air
+		BaseActor: mcvair
 	MPStartUnits@lightallies:
 		Class: light
 		ClassName: Light Support
