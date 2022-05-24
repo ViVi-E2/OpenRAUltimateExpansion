@@ -12,7 +12,7 @@ ExpandSmall:
 		Queue: BiterClass
 		BuildPaletteOrder: 1954
 		Prerequisites: ~techlevel.infonly, ~structures.biter, biternestlarge,
-		Description: Irradiated insect that crash landed on this planet/nWhen a engineer destroyed their homeworld.
+		Description: wIrradiated insect that crash landed on this planet/nWhen an engineer destroyed their homeworld.
 	Selectable:
 		Bounds: 24,24,0,-5
 		DecorationBounds: 30,30,0,-2
@@ -68,7 +68,7 @@ SmallBiter:
 		Queue: BiterClass
 		BuildPaletteOrder: 1954
 		Prerequisites: ~techlevel.infonly, ~structures.biter
-		Description: Irradiated insect that crash landed on this planet/nWhen a engineer destroyed their homeworld.
+		Description: Irradiated insect that crash landed on this planet/nWhen an engineer destroyed their homeworld.
 	Selectable:
 		Bounds: 24,24,0,-5
 		DecorationBounds: 30,30,0,-2
@@ -123,7 +123,7 @@ MediumBiter:
 		Queue: BiterClass
 		BuildPaletteOrder: 1954
 		Prerequisites: ~techlevel.infonly, ~structures.biter, notsmallnest
-		Description: Irradiated insect that crash landed on this planet/nWhen a engineer destroyed their homeworld.
+		Description: Irradiated insect that crash landed on this planet/nWhen an engineer destroyed their homeworld.
 	Selectable:
 		Bounds: 24,24,0,-5
 		DecorationBounds: 30,30,0,-2
@@ -180,7 +180,7 @@ LargeBiter:
 		Queue: BiterClass
 		BuildPaletteOrder: 1954
 		Prerequisites: ~techlevel.infonly, ~structures.biter, biternestlarge
-		Description: Irradiated insect that crash landed on this planet/nWhen a engineer destroyed their homeworld.
+		Description: Irradiated insect that crash landed on this planet/nWhen an engineer destroyed their homeworld.
 	Selectable:
 		Bounds: 24,24,0,-5
 		DecorationBounds: 30,30,0,-2
@@ -237,7 +237,7 @@ ThiccBiter:
 		Queue: BiterClass
 		BuildPaletteOrder: 1954
 		Prerequisites: ~techlevel.infonly, ~structures.biter, biternestlarge, btek
-		Description: Irradiated insect that crash landed on this planet/nWhen a engineer destroyed their homeworld.
+		Description: Irradiated insect that crash landed on this planet/nWhen an engineer destroyed their homeworld.
 	Selectable:
 		Bounds: 24,24,0,-5
 		DecorationBounds: 30,30,0,-2
@@ -296,7 +296,7 @@ SmallSpitter:
 		Queue: BiterClass
 		BuildPaletteOrder: 1954
 		Prerequisites: ~techlevel.infonly, ~structures.biter, biternestmedium
-		Description: Irradiated insect that crash landed on this planet/nWhen a engineer destroyed their homeworld.
+		Description: Irradiated insect that crash landed on this planet/nWhen an engineer destroyed their homeworld.
 	Selectable:
 		Bounds: 24,24,0,-5
 		DecorationBounds: 30,30,0,-2
@@ -353,7 +353,7 @@ MediumSpitter:
 		Queue: BiterClass
 		BuildPaletteOrder: 1954
 		Prerequisites: ~techlevel.infonly, ~structures.biter, notsmallnest
-		Description: Irradiated insect that crash landed on this planet/nWhen a engineer destroyed their homeworld.
+		Description: Irradiated insect that crash landed on this planet/nWhen an engineer destroyed their homeworld.
 	Selectable:
 		Bounds: 24,24,0,-5
 		DecorationBounds: 30,30,0,-2
@@ -410,7 +410,7 @@ LargeSpitter:
 		Queue: BiterClass
 		BuildPaletteOrder: 1954
 		Prerequisites: ~techlevel.infonly, ~structures.biter, biternestlarge, btek
-		Description: Irradiated insect that crash landed on this planet/nWhen a engineer destroyed their homeworld.
+		Description: Irradiated insect that crash landed on this planet/nWhen an engineer destroyed their homeworld.
 	Selectable:
 		Bounds: 24,24,0,-5
 		DecorationBounds: 30,30,0,-2

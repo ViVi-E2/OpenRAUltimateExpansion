@@ -203,7 +203,7 @@ BiterMine:
 	EngineerRepairable:
 	CashTrickler:
 		Interval: 375
-		Amount: 125
+		Amount: 175
 	Tooltip:
 		Name: Biter Mine
 	TooltipDescription@ally:

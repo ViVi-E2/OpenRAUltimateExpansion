@@ -1624,8 +1624,8 @@ AFLD.Mideast:
 		Prerequisites: dome, ~techlevel.medium, ~structures.mideast
 		Description: Produces and reloads aircraft.\n  Special Ability: Spy Plane\n  Special Ability: Vest Paratroopers\n  Special Ability: Apachebombs
 	AirstrikePower@parabombs:
-		OrderName: UkraineParabombs
-		Prerequisites: aircraft.siberia
+		OrderName: MidEastParabombs
+		Prerequisites: ~aircraft.mideast
 		Icon: apachebomb
 		ChargeInterval: 1500
 		Description: Apache Bombs
@@ -1647,7 +1647,7 @@ AFLD.Mideast:
 		SupportPowerPaletteOrder: 40
 	ParatroopersPower@paratroopers:
 		OrderName: MiddleEasternParatrooperBombers
-		Prerequisites: aircraft.mideast
+		Prerequisites: ~aircraft.mideast
 		Icon: paratroopers
 		ChargeInterval: 9000
 		Description: Paratroopers Bomber
