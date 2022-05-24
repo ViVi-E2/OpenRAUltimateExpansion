@@ -1907,6 +1907,11 @@ BARR:
 		Types: SpyInfiltrate
 	Targetable:
 		TargetTypes: GroundActor, C4, DetonateAttack, Structure, SpyInfiltrate
+    ProductionQueue:
+		Type: Infantry
+		DisplayOrder: 2
+		Group: Infantry
+		LowPowerModifier: 150
 
 KENN:
 	Inherits: ^Building
@@ -1983,7 +1988,11 @@ KENN:
 	Power:
 		Amount: -10
 	ProvidesPrerequisite@buildingname:
-
+    ProductionQueue:
+		Type: Infantry
+		DisplayOrder: 2
+		Group: Infantry
+		LowPowerModifier: 150
 TENT:
 	Inherits: ^Building
 	Inherits@shape: ^2x2Shape
@@ -2074,6 +2083,11 @@ TENT:
 		Types: SpyInfiltrate
 	Targetable:
 		TargetTypes: GroundActor, C4, DetonateAttack, Structure, SpyInfiltrate
+    ProductionQueue:
+		Type: Infantry
+		DisplayOrder: 2
+		Group: Infantry
+		LowPowerModifier: 150
 
 FIX:
 	Inherits: ^Building

@@ -232,6 +232,11 @@ REC:
 		RepairStep: 700
 		PlayerExperience: 25
 		RepairingNotification: Repairing
+    ProductionQueue:
+		Type: Infantry
+		DisplayOrder: 2
+		Group: Infantry
+		LowPowerModifier: 150
         
 PistolGril:
 	Inherits: ^Soldier
