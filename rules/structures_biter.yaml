@@ -336,12 +336,8 @@ BiterNestSmall:
 	Targetable:
 		TargetTypes: GroundActor, C4, DetonateAttack, Structure, SpyInfiltrate
     Production:
-		Produces: Infantry
-    ProductionQueue@biter:
-		Type: Biter
-		DisplayOrder: 0
-		Factions: biter
-		Group: Biter
+		Produces: Infantry, Soldier
+
     ProductionBar:
 		ProductionType: Infantry
     RenderSprites:

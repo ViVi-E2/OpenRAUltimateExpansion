@@ -300,7 +300,7 @@ SmallSpitter:
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 1954
-		Prerequisites: ~techlevel.infonly, ~structures.biter, mediumnestlarge
+		Prerequisites: ~techlevel.infonly, ~structures.biter, biternestmedium
 		Description: Irradiated insect that crash landed on this planet/nWhen a engineer destroyed their homeworld.
 	Selectable:
 		Bounds: 24,24,0,-5
