@@ -9,8 +9,7 @@ ExpandSmall:
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Buildable:
-		Queue: Infantry
-		BuildAtProductionType: Soldier
+		Queue: BiterClass
 		BuildPaletteOrder: 1954
 		Prerequisites: ~techlevel.infonly, ~structures.biter, biternestlarge,
 		Description: Irradiated insect that crash landed on this planet/nWhen a engineer destroyed their homeworld.
@@ -66,8 +65,7 @@ SmallBiter:
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Buildable:
-		Queue: Infantry
-		BuildAtProductionType: Soldier
+		Queue: BiterClass
 		BuildPaletteOrder: 1954
 		Prerequisites: ~techlevel.infonly, ~structures.biter
 		Description: Irradiated insect that crash landed on this planet/nWhen a engineer destroyed their homeworld.
@@ -122,8 +120,7 @@ MediumBiter:
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Buildable:
-		Queue: Infantry
-		BuildAtProductionType: Soldier
+		Queue: BiterClass
 		BuildPaletteOrder: 1954
 		Prerequisites: ~techlevel.infonly, ~structures.biter, notsmallnest
 		Description: Irradiated insect that crash landed on this planet/nWhen a engineer destroyed their homeworld.
@@ -180,8 +177,7 @@ LargeBiter:
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Buildable:
-		Queue: Infantry
-		BuildAtProductionType: Soldier
+		Queue: BiterClass
 		BuildPaletteOrder: 1954
 		Prerequisites: ~techlevel.infonly, ~structures.biter, biternestlarge
 		Description: Irradiated insect that crash landed on this planet/nWhen a engineer destroyed their homeworld.
@@ -238,8 +234,7 @@ ThiccBiter:
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Buildable:
-		Queue: Infantry
-		BuildAtProductionType: Soldier
+		Queue: BiterClass
 		BuildPaletteOrder: 1954
 		Prerequisites: ~techlevel.infonly, ~structures.biter, biternestlarge, btek
 		Description: Irradiated insect that crash landed on this planet/nWhen a engineer destroyed their homeworld.
@@ -298,7 +293,7 @@ SmallSpitter:
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Buildable:
-		Queue: Vehicle
+		Queue: BiterClass
 		BuildPaletteOrder: 1954
 		Prerequisites: ~techlevel.infonly, ~structures.biter, biternestmedium
 		Description: Irradiated insect that crash landed on this planet/nWhen a engineer destroyed their homeworld.
@@ -355,9 +350,9 @@ MediumSpitter:
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Buildable:
-		Queue: Vehicle
+		Queue: BiterClass
 		BuildPaletteOrder: 1954
-		Prerequisites: ~techlevel.infonly, ~structures.biter, spitternestlarge
+		Prerequisites: ~techlevel.infonly, ~structures.biter, notsmallnest
 		Description: Irradiated insect that crash landed on this planet/nWhen a engineer destroyed their homeworld.
 	Selectable:
 		Bounds: 24,24,0,-5
@@ -412,9 +407,9 @@ LargeSpitter:
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Buildable:
-		Queue: Vehicle
+		Queue: BiterClass
 		BuildPaletteOrder: 1954
-		Prerequisites: ~techlevel.infonly, ~structures.biter, spitternestlarge, btek
+		Prerequisites: ~techlevel.infonly, ~structures.biter, biternestlarge, btek
 		Description: Irradiated insect that crash landed on this planet/nWhen a engineer destroyed their homeworld.
 	Selectable:
 		Bounds: 24,24,0,-5

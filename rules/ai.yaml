@@ -99,12 +99,12 @@ Player:
 		MaximumExcessPower: 160
 		ExcessPowerIncrement: 40
 		ExcessPowerIncreaseThreshold: 4
-		ConstructionYardTypes: fact
-		RefineryTypes: proc
-		PowerTypes: powr,apwr
+		ConstructionYardTypes: fact, biterhive
+		RefineryTypes: proc, bitermine
+		PowerTypes: powr,apwr, apwrbite
 		BarracksTypes: barr,tent
 		VehiclesFactoryTypes: weap
-		ProductionTypes: barr,tent,weap
+		ProductionTypes: barr,tent,weap, biternestsmall
 		SiloTypes: silo
 		BuildingLimits:
 			proc: 4
@@ -116,6 +116,11 @@ Player:
 			atek: 1
 			stek: 1
 			fix: 1
+            bitermine: 8
+            btek: 1
+            biternestsmall: 8
+            biternestmedium: 2
+            biternestlarge: 2
 		BuildingFractions:
 			proc: 30
 			barr: 1
@@ -134,6 +139,12 @@ Player:
 			fix: 1
 			dome: 10
 			mslo: 1
+            worm: 8
+            bitermine: 30
+            btek: 1
+            biternestsmall: 8
+            biternestmedium: 2
+            biternestlarge: 2            
 	BaseBuilderBotModule@normal:
 		RequiresCondition: enable-normal-ai
 		MinimumExcessPower: 60
@@ -297,12 +308,12 @@ Player:
 		SquadSize: 20
 		ExcludeFromSquadsTypes: harv, mcv, dog
 		NavalUnitsTypes: ss,msub,dd,ca,lst,pt
-		ConstructionYardTypes: fact
+		ConstructionYardTypes: fact, biterhive
 	McvManagerBotModule:
 		RequiresCondition: enable-rush-ai || enable-normal-ai || enable-turtle-ai || enable-naval-ai
-		McvTypes: mcv
-		ConstructionYardTypes: fact
-		McvFactoryTypes: weap
+		McvTypes: mcv, expandsmall
+		ConstructionYardTypes: fact, biterhive
+		McvFactoryTypes: weap, biternestlarge
 	UnitBuilderBotModule@rush:
 		RequiresCondition: enable-rush-ai
 		UnitsToBuild:
@@ -329,6 +340,13 @@ Player:
 			stnk: 5
             katyusha: 15
             guntnk: 20
+            SmallBiter: 50
+            mediumbiter: 30
+            largebiter: 25
+            thiccbiter: 20
+            smallspitter: 30
+            mediumspitter: 20
+            largespitter: 15
 		UnitLimits:
 			dog: 4
 			harv: 8
