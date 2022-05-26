@@ -1,0 +1,19 @@
+SnipeA:
+	ReloadDelay: 30
+	Range: 8c512
+	Report: gun5.aud
+	ValidTargets: Ground, Infantry, Barrel
+	Projectile: InstantHit
+		Blockable: true
+	Warhead@1Dam: SpreadDamage
+		Spread: 42
+		Damage: 5000
+		ValidTargets: GroundActor
+		DamageTypes: Prone50Percent, TriggerProne, DefaultDeath
+	Warhead@2Eff: CreateEffect
+		Explosions: piff
+		ValidTargets: Ground, GroundActor, Air, AirborneActor, WaterActor, Trees
+	Warhead@3EffWater: CreateEffect
+		Explosions: water_piff
+		ValidTargets: Water, Underwater
+		InvalidTargets: Bridge
