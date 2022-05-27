@@ -152,7 +152,6 @@ AmmoBot:
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 10
 		Prerequisites: ~techlevel.infonly, ~infantry.factengine
-		Prerequisites: ~techlevel.infonly, ~infantry.factengine
 		Description: General-purpose infantry.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
 	Selectable:
 		Class: E1
