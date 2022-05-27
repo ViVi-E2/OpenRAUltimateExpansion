@@ -66,3 +66,21 @@ Chop:
 			Concrete: 15
             Tree: 9999
 		DamageTypes: Prone50Percent, TriggerProne, DefaultDeath
+
+BearJaw:
+	ValidTargets: Infantry
+	ReloadDelay: 10
+	Range: 2c0
+	Report: dogg5p.aud
+	TargetActorCenter: true
+	Projectile: InstantHit
+	Warhead@1Dam: TargetDamage
+		Damage: 5000
+		Versus:
+			None: 100
+			Wood: 15
+			Light: 15
+			Heavy: 10
+			Concrete: 10
+		ValidTargets: GroundActor, WaterActor
+		DamageTypes: DefaultDeath
