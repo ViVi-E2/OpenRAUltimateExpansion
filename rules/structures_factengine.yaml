@@ -534,8 +534,8 @@ HPADFactory:
 		OrderName: artyFact
 		Prerequisites: aircraft.factengine
 		Icon: parabombs
-		ChargeInterval: 1
-		Description: Parabombs
+		ChargeInterval: 13500
+		Description: End it All
 		LongDesc: A squad of Badgers drop parachuted\nbombs on your target.
 		SelectTargetSpeechNotification: SelectTarget
 		CameraActor: camera
@@ -552,6 +552,7 @@ HPADFactory:
 		UseDirectionalTarget: True
 		DirectionArrowAnimation: paradirection
 		SupportPowerPaletteOrder: 40
+        DisplayTimerRelationships: Ally, Neutral, Enemy
     RenderSprites:
 	    Image: hpad
         
@@ -606,3 +607,51 @@ ThiccArtyFact:
 		ReloadDelay: 1500
     RenderSprites:
 	    Image: mslo
+        
+GAPFact:
+	Inherits: ^ScienceBuilding
+	Inherits@IDISABLE: ^DisableOnLowPowerOrPowerDown
+	Valued:
+		Cost: 800
+	Tooltip:
+		Name: Gap Generator
+	Buildable:
+		Queue: Defense
+		BuildPaletteOrder: 110
+		Prerequisites: enginetek2, ~structures.factengine, ~techlevel.high
+		Description: Obscures the enemy's view with shroud.\nRequires power to operate.
+	Selectable:
+		Bounds: 24,24
+		DecorationBounds: 24,48,0,-12
+	WithSpriteBody:
+		PauseOnCondition: disabled
+	Health:
+		HP: 50000
+	Armor:
+		Type: Heavy
+	RevealsShroud:
+		MinRange: 5c0
+		Range: 6c0
+		RevealGeneratedShroud: False
+	RevealsShroud@GAPGEN:
+		Range: 5c0
+	WithBuildingBib:
+		HasMinibib: true
+	CreatesShroud:
+		Range: 6c0
+		RequiresCondition: !disabled
+	RenderShroudCircle:
+	Power:
+		Amount: -60
+	MustBeDestroyed:
+		RequiredForShortGame: false
+	-AcceptsDeliveredCash:
+	Explodes:
+		Weapon: SmallBuildingExplode
+		EmptyWeapon: SmallBuildingExplode
+	HitShape:
+		Type: Rectangle
+			TopLeft: -512, -512
+			BottomRight: 512, 512
+    RenderSprites:
+	    Image: gap
