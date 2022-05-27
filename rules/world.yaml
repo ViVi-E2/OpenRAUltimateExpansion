@@ -284,6 +284,11 @@ World:
 		ClassName: MCV Only
 		Factions: air
 		BaseActor: mcvair
+    MPStartUnits@mcvonlyengineer:
+		Class: none
+		ClassName: MCV Only
+		Factions: factengine
+		BaseActor: factengineer
 	MPStartUnits@lightallies:
 		Class: light
 		ClassName: Light Support
