@@ -140,6 +140,7 @@ Lumberjack:
 
 Bear:
 	Inherits: ^Soldier
+    Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Buildable:
 		Queue: Infantry
 		BuildAtProductionType: Dog
@@ -149,7 +150,7 @@ Bear:
 	Valued:
 		Cost: 500
 	Tooltip:
-		Name: Bear
+		Name: Bear_old
 		GenericName: Dog
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
@@ -187,9 +188,9 @@ Bear:
 	AutoTarget:
 		InitialStance: AttackAnything
 	AutoTargetPriority@DEFAULT:
-		ValidTargets: GroundActor, Infantry
+		ValidTargets: GroundActor
 	Targetable:
-		TargetTypes: GroundActor, Infantry
+		TargetTypes: GroundActor
 	WithInfantryBody:
 		MoveSequence: walk
 		StandSequences: stand
@@ -211,3 +212,71 @@ Bear:
     RenderSprites:
 		Image: Dog
         Scale: 1.6
+        
+DOGCanada:
+	Inherits: ^Soldier
+	Buildable:
+		Queue: Infantry
+		BuildAtProductionType: Dog
+		BuildPaletteOrder: 50
+		Prerequisites: ~kenncanada, ~techlevel.infonly
+		Description: Anti-infantry unit.\nCan detect spies.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
+	Valued:
+		Cost: 200
+	Tooltip:
+		Name: Attack Dog
+		GenericName: Dog
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Selectable:
+		Bounds: 12,17,-1,-4
+		DecorationBounds: 12,17,-1,-4
+	Health:
+		HP: 1800
+	Mobile:
+		Speed: 99
+		Voice: Move
+		PauseOnCondition: attack-cooldown || eating
+	Guard:
+		Voice: Move
+	Passenger:
+		Voice: Move
+	RevealsShroud:
+		Range: 5c512
+	Armament:
+		Weapon: DogJaw
+		ReloadingCondition: attack-cooldown
+	-AttackFrontal:
+	AttackLeap:
+		Voice: Attack
+		PauseOnCondition: attacking || attack-cooldown
+	AttackMove:
+		Voice: Move
+	GrantConditionOnAttack:
+		Condition: eating
+		RevokeDelay: 45
+	GrantConditionWhileAiming:
+		Condition: run
+	AutoTarget:
+		InitialStance: AttackAnything
+	AutoTargetPriority@DEFAULT:
+		ValidTargets: Infantry
+	Targetable:
+		TargetTypes: GroundActor, Infantry
+	WithInfantryBody:
+		MoveSequence: walk
+		StandSequences: stand
+		DefaultAttackSequence: eat
+		RequiresCondition: !run
+	WithInfantryBody@RUN:
+		MoveSequence: run
+		RequiresCondition: run
+	SpeedMultiplier:
+		Modifier: 150
+		RequiresCondition: run
+	IgnoresDisguise:
+	Voiced:
+		VoiceSet: DogVoice
+	-TakeCover:
+    RenderSprites:
+		Image: Dog
