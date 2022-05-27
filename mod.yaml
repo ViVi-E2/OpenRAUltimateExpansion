@@ -61,7 +61,7 @@ Rules:
     ra|rules/infantry_rebel.yaml
     ra|rules/structures_rebel.yaml
     ra|rules/misc_rebel.yaml
-    #ra|rules/infantry_canada.yaml
+    ra|rules/infantry_canada.yaml
     #ra|rules/aircraft_canada.yaml
     #ra|rules/vehicles_canada.yaml
     ra|rules/infantry_siberia.yaml
@@ -72,6 +72,7 @@ Rules:
     #ra|rules/infantry_air.yaml
     ra|rules/vehicles_air.yaml
     ra|rules/structures_air.yaml
+    ra|rules/structures_canada.yaml
 
 Sequences:
 	ra|sequences/ships.yaml
@@ -159,6 +160,7 @@ Weapons:
     ra|weapons/rebel.yaml
     ra|weapons/siberia.yaml
     ra|weapons/biter.yaml
+    ra|weapons/canada.yaml
 
 Voices:
 	ra|audio/voices.yaml
