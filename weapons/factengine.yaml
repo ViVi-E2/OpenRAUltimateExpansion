@@ -463,3 +463,17 @@ NuclearArtyShell:
 	Warhead@22FlashEffect: FlashPaletteEffect
 		Duration: 5
 		FlashType: Nuke
+       
+       
+Repair2:
+	ReloadDelay: 30
+    Report: fixit1.aud
+	Range: 2c0
+    ValidTargets: Repair2
+	Projectile: Bullet
+		Speed: 1c682
+	Warhead@1Dam: SpreadDamage
+		Spread: 213
+		Damage: -3000
+        ValidRelationships: Ally
+        ValidTargets: Repair2
