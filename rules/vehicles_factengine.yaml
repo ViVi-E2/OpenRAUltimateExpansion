@@ -54,7 +54,7 @@ JEEPFact:
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 320
-		Prerequisites: ~structures.factengine
+		Prerequisites: ~structures.factengine, enginetek2, fix
 		Description: Big and slow tank, with anti-air capability.\nCan crush concrete walls.\n  Strong vs Vehicles, Infantry, Aircraft\n  Weak vs Nothing
 	Valued:
 		Cost: 2500

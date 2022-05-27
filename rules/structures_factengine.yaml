@@ -383,7 +383,7 @@ BotTent:
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 20
-		Prerequisites: anypower, ~structures.factengine, ~techlevel.infonly
+		Prerequisites: anypower, ~structures.factengine, ~techlevel.infonly, enginetek2
 		Description: Trains Bots.
 	Valued:
 		Cost: 500
@@ -568,7 +568,7 @@ ThiccArtyFact:
 	Buildable:
 		Queue: Defense
 		BuildPaletteOrder: 140
-		Prerequisites: techcenter, ~techlevel.unrestricted, ~structures.factengine
+		Prerequisites: enginetek1, ~techlevel.unrestricted, ~structures.factengine
 		Description: Provides an artilery.\nRequires power to operate.
 	Building:
 		Footprint: xx

@@ -27,7 +27,7 @@ factengineer:
 	Valued:
 		Cost: 2000
 	Tooltip:
-		Name: General
+		Name: Mr. Engineerington
 	Sellable:
 		RequiresCondition: !build-incomplete && !chrono-vortex && !being-captured && !being-demolished
 	ProductionBar@Building:
