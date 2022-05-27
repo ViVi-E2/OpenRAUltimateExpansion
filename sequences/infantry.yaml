@@ -329,7 +329,11 @@ e6:
 		Tick: 100
 	parachute:
 		Start: 210
-	idle1:
+	idle:
+		Start: 121
+		Length: 8
+		Tick: 120
+    idle1:
 		Start: 121
 		Length: 8
 		Tick: 120
