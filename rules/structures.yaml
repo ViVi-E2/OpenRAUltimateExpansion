@@ -2075,6 +2075,9 @@ TENT:
 	ProvidesPrerequisite@germanstructure:
 		RequiresPrerequisites: structures.germany
 		Prerequisite: infantry.germany
+    ProvidesPrerequisite@canadastructure:
+		RequiresPrerequisites: structures.canada
+		Prerequisite: infantry.canada
 	Power:
 		Amount: -20
 	ProvidesPrerequisite@buildingname:
