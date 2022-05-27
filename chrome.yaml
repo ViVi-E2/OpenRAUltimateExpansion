@@ -394,8 +394,9 @@ flags:
 		unique: 226, 241, 30, 15
         siberia: 226, 193, 30, 15
         canada: 226, 225, 30, 15
-        biter: 226, 241, 30, 15
+        biter: 226, 209, 30, 15
         air: 226, 225, 30, 15
+        factengine: 226, 225, 30, 15
 
 
 music:
