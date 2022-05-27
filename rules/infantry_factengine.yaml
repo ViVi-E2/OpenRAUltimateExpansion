@@ -72,7 +72,7 @@ RepairBot2:
 		Queue: Infantry
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 60
-		Prerequisites: ~techlevel.infonly
+		Prerequisites: ~techlevel.infonly, ~infantry.factengine
 		Description: Repairs Structures.
     Selectable:
 		Bounds: 18,20,0,-6
@@ -151,14 +151,15 @@ AmmoBot:
 		Queue: Infantry
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 10
-		Prerequisites: ~barracks, ~techlevel.infonly, ~!infantry.siberia, ~!general.rebel, ~!structures.biter
+		Prerequisites: ~techlevel.infonly, ~infantry.factengine
+		Prerequisites: ~techlevel.infonly, ~infantry.factengine
 		Description: General-purpose infantry.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
 	Selectable:
 		Class: E1
 	Valued:
 		Cost: 500
 	Tooltip:
-		Name: Rifle Infantry
+		Name: Ammo bot
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Health:
