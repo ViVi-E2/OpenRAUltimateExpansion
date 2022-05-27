@@ -352,7 +352,7 @@ MediumSpitter:
 	Buildable:
 		Queue: BiterClass
 		BuildPaletteOrder: 1954
-		Prerequisites: ~techlevel.infonly, ~structures.biter, notsmallnest
+		Prerequisites: ~techlevel.infonly, ~structures.biter, biternestlarge
 		Description: Irradiated insect that crash landed on this planet/nWhen an engineer destroyed their homeworld.
 	Selectable:
 		Bounds: 24,24,0,-5

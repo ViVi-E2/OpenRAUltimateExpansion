@@ -344,6 +344,7 @@ HARV:
 	WithHarvesterSpriteBody:
 		ImageByFullness: harvempty, harvhalf, harv
 	-WithFacingSpriteBody:
+    Carryable:
 	WithHarvesterPipsDecoration:
 		Position: BottomLeft
 		Margin: 4, 3

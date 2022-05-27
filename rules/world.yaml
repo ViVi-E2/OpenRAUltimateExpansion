@@ -173,6 +173,11 @@
 		InternalName: air
 		Side: Allies
 		Description: fAIRly AIRy despAIR: Air\nHaHa, flying cars and structures?
+    Faction@14:
+		Name: Factory Engineer
+		InternalName: factengine
+		Side: Allies
+		Description: Factory Engineer: Turrets\nCan build many strong turrets.
 	Faction@random:
 		Name: Any
 		InternalName: Random
@@ -284,6 +289,11 @@ World:
 		ClassName: MCV Only
 		Factions: air
 		BaseActor: mcvair
+    MPStartUnits@mcvonlyengineer:
+		Class: none
+		ClassName: MCV Only
+		Factions: factengine
+		BaseActor: factengineer
 	MPStartUnits@lightallies:
 		Class: light
 		ClassName: Light Support
