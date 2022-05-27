@@ -168,11 +168,6 @@
 		InternalName: biter
 		Side: Soviet
 		Description: Swarm your enemies with many small biters
-    Faction@13:
-		Name: fAIRly AIRy despAIR
-		InternalName: air
-		Side: Allies
-		Description: fAIRly AIRy despAIR: Air\nHaHa, flying cars and structures?
     Faction@14:
 		Name: Factory Engineer
 		InternalName: factengine
@@ -289,11 +284,6 @@ World:
 		ClassName: MCV Only
 		Factions: air
 		BaseActor: mcvair
-    MPStartUnits@mcvonlyengineer:
-		Class: none
-		ClassName: MCV Only
-		Factions: factengine
-		BaseActor: factengineer
 	MPStartUnits@lightallies:
 		Class: light
 		ClassName: Light Support

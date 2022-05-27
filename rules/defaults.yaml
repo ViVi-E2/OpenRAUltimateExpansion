@@ -677,7 +677,6 @@
 	MapEditorData:
 		Categories: Building
 	CommandBarBlacklist:
-    
 
 ^Building:
 	Inherits: ^BasicBuilding
@@ -719,12 +718,6 @@
 		Position: Center
 		Palette: player
 		IsPlayerPalette: True
-    Targetable@Repair2:
-		RequiresCondition: damaged
-		TargetTypes: Repair2
-	GrantConditionOnDamageState@DAMAGED:
-		Condition: damaged
-		ValidDamageStates: Light, Medium, Heavy, Critical
 
 ^ScienceBuilding:
 	Inherits: ^Building
@@ -938,6 +931,13 @@
 		Palette: effect
 		MinimumDamageState: Heavy
 		MaximumDamageState: Dead
+    CustomSellValue:
+        Value: 100
+    GivesBounty:
+		Percentage: 100
+        RequiresCondition: Chopy
+    ExternalCondition:
+        Condition: Chopy
 	HiddenUnderShroud:
 	ScriptTriggers:
 	MapEditorData:
